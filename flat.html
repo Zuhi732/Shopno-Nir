@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>খালি ফ্ল্যাট | স্বপ্ননীড় আবাসন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="text-2xl font-bold text-teal-600"
+            >স্বপ্ননীড় আবাসন</a
+          >
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="index.html" class="text-gray-600 hover:text-teal-600"
+              >প্রথম পাতা</a
+            >
+            <a href="form.html" class="text-gray-600 hover:text-teal-600"
+              >তথ্য ফরম</a
+            >
+            <a href="flat.html" class="text-teal-600 font-bold">খালি ফ্ল্যাট</a>
+            <a href="complain.html" class="text-gray-600 hover:text-teal-600"
+              >অভিযোগ</a
+            >
+            <a
+              href="index.html#contact"
+              class="text-gray-600 hover:text-teal-600"
+              >যোগাযোগ</a
+            >
+          </div>
+          <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <a
+            href="index.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >প্রথম পাতা</a
+          >
+          <a
+            href="form.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >তথ্য ফরম</a
+          >
+          <a
+            href="flat.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >খালি ফ্ল্যাট</a
+          >
+          <a
+            href="complain.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >অভিযোগ</a
+          >
+          <a
+            href="index.html#contact"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >যোগাযোগ</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-16">
+      <section id="vacant-flats" class="container mx-auto px-6 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">খালি ফ্ল্যাটের তথ্য</h2>
+          <p class="text-gray-600 mt-2">
+            বর্তমানে নিম্নলিখিত ফ্ল্যাটগুলো ভাড়া দেওয়ার জন্য প্রস্তুত রয়েছে।
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-teal-500 reveal"
+          >
+            <h3 class="text-2xl font-bold text-teal-600 mb-2">
+              ফ্ল্যাট নং: A-3
+            </h3>
+            <p class="text-gray-700"><strong>সাইজ:</strong> ১২৫০ স্কয়ার ফিট</p>
+            <p class="text-gray-700">
+              <strong>বেডরুম:</strong> ৩টি, <strong>বাথরুম:</strong> ২টি
+            </p>
+            <p class="text-gray-700"><strong>ভাড়া:</strong> আলোচনা সাপেক্ষে</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gray-400 reveal"
+          >
+            <h3 class="text-2xl font-bold text-gray-500 mb-2">
+              ফ্ল্যাট নং: C-1
+            </h3>
+            <p class="text-gray-700"><strong>(ভাড়া হয়ে গেছে)</strong></p>
+            <p class="text-gray-500">এই ফ্ল্যাটটি সম্প্রতি ভাড়া হয়ে গেছে।</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 fixed bottom-0 w-full">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; ২০২৫ স্বপ্ননীড় আবাসন। সর্বসত্ত্ব সংরক্ষিত।</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("active");
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

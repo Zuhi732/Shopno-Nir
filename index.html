@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>বাড়ির নিয়মাবলী | স্বপ্ননীড় আবাসন</title>
-
+    <title>স্বাগতম | স্বপ্ননীড় আবাসন</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
     <style>
-      /* Applying Bengali font to the entire site */
       body {
         font-family: "Hind Siliguri", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -25,12 +37,19 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <a href="#" class="text-2xl font-bold text-teal-600"
+          <a href="index.html" class="text-2xl font-bold text-teal-600"
             >স্বপ্ননীড় আবাসন</a
           >
           <div class="hidden md:flex items-center space-x-6">
-            <a href="#rules" class="text-gray-600 hover:text-teal-600"
-              >নিয়মাবলী</a
+            <a href="index.html" class="text-teal-600 font-bold">প্রথম পাতা</a>
+            <a href="form.html" class="text-gray-600 hover:text-teal-600"
+              >তথ্য ফরম</a
+            >
+            <a href="flat.html" class="text-gray-600 hover:text-teal-600"
+              >খালি ফ্ল্যাট</a
+            >
+            <a href="complain.html" class="text-gray-600 hover:text-teal-600"
+              >অভিযোগ</a
             >
             <a href="#contact" class="text-gray-600 hover:text-teal-600"
               >যোগাযোগ</a
@@ -40,9 +59,24 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
           <a
-            href="#rules"
+            href="index.html"
             class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
-            >নিয়মাবলী</a
+            >প্রথম পাতা</a
+          >
+          <a
+            href="form.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >তথ্য ফরম</a
+          >
+          <a
+            href="flat.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >খালি ফ্ল্যাট</a
+          >
+          <a
+            href="complain.html"
+            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            >অভিযোগ</a
           >
           <a
             href="#contact"
@@ -63,7 +97,7 @@
         <div
           class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
         >
-          <div class="text-center text-white p-4">
+          <div class="text-center text-white p-4 reveal">
             <h1 class="text-4xl md:text-5xl font-bold">
               আমাদের ভবনে আপনাকে স্বাগতম
             </h1>
@@ -76,7 +110,7 @@
 
       <section id="rules" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-          <div class="text-center mb-12">
+          <div class="text-center mb-12 reveal">
             <h2 class="text-3xl font-bold text-gray-800">
               বাড়ির আবশ্যক নিয়মাবলী
             </h2>
@@ -84,48 +118,44 @@
               সুশৃঙ্খল পরিবেশ বজায় রাখতে অনুগ্রহ করে নিয়মগুলো মেনে চলুন।
             </p>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500"
+              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
             >
               <div class="text-4xl mb-4">🗓️</div>
-              <h3 class="text-xl font-bold mb-2">১. বাসা ছাড়ার নিয়ম</h3>
+              <h3 class="text-xl font-bold mb-2">বাসা ছাড়ার নিয়ম</h3>
               <p class="text-gray-700">
                 বাসা ছাড়ার কমপক্ষে এক মাস (৩০ দিন) পূর্বে ফ্ল্যাটের মালিক কে
                 জানাতে হবে।
               </p>
             </div>
-
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500"
+              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
             >
               <div class="text-4xl mb-4">💰</div>
-              <h3 class="text-xl font-bold mb-2">২. অগ্রিম ভাড়া প্রদান</h3>
+              <h3 class="text-xl font-bold mb-2">অগ্রিম ভাড়া প্রদান</h3>
               <p class="text-gray-700">
                 বাসা ভাড়া নেওয়া নিশ্চিত করার জন্য অবশ্যই এক মাসের ভাড়া অগ্রিম
                 হিসেবে প্রদান করতে হবে।
               </p>
             </div>
-
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500"
+              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
             >
               <div class="text-4xl mb-4">🔒</div>
-              <h3 class="text-xl font-bold mb-2">৩. নিরাপত্তা ও গেট</h3>
+              <h3 class="text-xl font-bold mb-2">নিরাপত্তা ও গেট</h3>
               <p class="text-gray-700">
                 বাসায় প্রবেশ এবং বাহির হওয়ার পর সর্বদা ভবনের প্রধান গেটটি
                 সঠিকভাবে লক করা বাধ্যতামূলক।
               </p>
             </div>
-
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500"
+              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
             >
               <div class="text-4xl mb-4">💳</div>
-              <h3 class="text-xl font-bold mb-2">৪. ভাড়া পরিশোধের সময়সীমা</h3>
+              <h3 class="text-xl font-bold mb-2">ভাড়া পরিশোধের সময়সীমা</h3>
               <p class="text-gray-700">
-                প্রতি মাসের ১০-১৫ তারিখের মধ্যে কোনোপ্রকার বিলম্ব ছাড়াই সম্পূর্ণ
+                প্রতি মাসের ১০ তারিখের মধ্যে কোনোপ্রকার বিলম্ব ছাড়াই সম্পূর্ণ
                 বাসা ভাড়া পরিশোধ করতে হবে।
               </p>
             </div>
@@ -134,7 +164,7 @@
       </section>
 
       <section id="contact" class="py-16 bg-slate-100">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-6 text-center reveal">
           <h2 class="text-3xl font-bold text-gray-800">
             জরুরী প্রয়োজনে যোগাযোগ
           </h2>
@@ -143,7 +173,7 @@
             <h3 class="text-2xl font-bold text-teal-600 my-2">মনজুরুল হক</h3>
             <p class="text-lg mt-4">মোবাইল নম্বর:</p>
             <a
-              href="tel:+8801XXXXXXXXX"
+              href="tel:01715423646"
               class="text-2xl font-bold text-teal-600 my-2"
               >01715423646</a
             >
@@ -159,13 +189,23 @@
     </footer>
 
     <script>
-      // JavaScript for mobile menu toggle
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("active");
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
