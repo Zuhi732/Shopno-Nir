@@ -18,6 +18,7 @@
     <style>
       body {
         font-family: "Hind Siliguri", sans-serif;
+        background-color: #f0f4f8; /* Light Blue-Gray Background */
       }
       html {
         scroll-behavior: smooth;
@@ -31,56 +32,78 @@
         opacity: 1;
         transform: translateY(0);
       }
+      .gradient-text {
+        background: linear-gradient(to right, #0d9488, #0d8a94);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
-  <body class="bg-slate-100 text-gray-800">
-    <header class="bg-white shadow-md sticky top-0 z-50">
+  <body class="text-gray-700">
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-          <a href="index.html" class="text-2xl font-bold text-teal-600"
+          <a href="index.html" class="text-2xl font-bold gradient-text"
             >স্বপ্ননীড় আবাসন</a
           >
           <div class="hidden md:flex items-center space-x-6">
             <a href="index.html" class="text-teal-600 font-bold">প্রথম পাতা</a>
-            <a href="form.html" class="text-gray-600 hover:text-teal-600"
+            <a
+              href="form.html"
+              class="text-gray-600 hover:text-teal-600 transition"
               >তথ্য ফরম</a
             >
-            <a href="flat.html" class="text-gray-600 hover:text-teal-600"
+            <a
+              href="flat.html"
+              class="text-gray-600 hover:text-teal-600 transition"
               >খালি ফ্ল্যাট</a
             >
-            <a href="complain.html" class="text-gray-600 hover:text-teal-600"
+            <a
+              href="complain.html"
+              class="text-gray-600 hover:text-teal-600 transition"
               >অভিযোগ</a
             >
-            <a href="#contact" class="text-gray-600 hover:text-teal-600"
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-teal-600 transition"
               >যোগাযোগ</a
             >
           </div>
-          <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+          <button id="menu-btn" class="md:hidden text-2xl text-teal-600">
+            ☰
+          </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
           <a
             href="index.html"
-            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
             >প্রথম পাতা</a
           >
           <a
             href="form.html"
-            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
             >তথ্য ফরম</a
           >
           <a
             href="flat.html"
-            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
             >খালি ফ্ল্যাট</a
           >
           <a
             href="complain.html"
-            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
             >অভিযোগ</a
           >
           <a
             href="#contact"
-            class="block py-2 text-gray-600 hover:bg-slate-200 rounded"
+            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
             >যোগাযোগ</a
           >
         </div>
@@ -89,72 +112,81 @@
 
     <main>
       <section
-        class="relative bg-cover bg-center h-80"
+        class="relative bg-cover bg-center h-96"
         style="
           background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1470&q=80');
         "
       >
         <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center"
         >
           <div class="text-center text-white p-4 reveal">
-            <h1 class="text-4xl md:text-5xl font-bold">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
               আমাদের ভবনে আপনাকে স্বাগতম
             </h1>
-            <p class="mt-4 text-lg">
+            <p class="mt-4 text-lg max-w-2xl mx-auto">
               ভাড়াটিয়াদের জন্য প্রয়োজনীয় তথ্যাবলী ও নিয়মাবলী
             </p>
           </div>
         </div>
       </section>
 
-      <section id="rules" class="py-16 bg-white">
+      <section id="rules" class="py-20 bg-white">
         <div class="container mx-auto px-6">
           <div class="text-center mb-12 reveal">
-            <h2 class="text-3xl font-bold text-gray-800">
-              বাড়ির আবশ্যক নিয়মাবলী
+            <h2 class="text-4xl font-bold text-gray-800">
+              বাড়ির আবশ্যক <span class="gradient-text">নিয়মাবলী</span>
             </h2>
-            <p class="text-gray-600 mt-2">
-              সুশৃঙ্খল পরিবেশ বজায় রাখতে অনুগ্রহ করে নিয়মগুলো মেনে চলুন।
+            <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+              সুশৃঙ্খল ও শান্তিপূর্ণ পরিবেশ বজায় রাখতে অনুগ্রহ করে নিচের
+              নিয়মগুলো মেনে চলুন।
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
+              class="bg-white p-8 rounded-xl shadow-md card-hover reveal border border-gray-100"
             >
-              <div class="text-4xl mb-4">🗓️</div>
+              <div class="text-4xl mb-4 text-teal-500">
+                <i class="fa-solid fa-calendar-times"></i>
+              </div>
               <h3 class="text-xl font-bold mb-2">বাসা ছাড়ার নিয়ম</h3>
-              <p class="text-gray-700">
+              <p class="text-gray-600">
                 বাসা ছাড়ার কমপক্ষে এক মাস (৩০ দিন) পূর্বে ফ্ল্যাটের মালিক কে
                 জানাতে হবে।
               </p>
             </div>
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
+              class="bg-white p-8 rounded-xl shadow-md card-hover reveal border border-gray-100"
             >
-              <div class="text-4xl mb-4">💰</div>
+              <div class="text-4xl mb-4 text-teal-500">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+              </div>
               <h3 class="text-xl font-bold mb-2">অগ্রিম ভাড়া প্রদান</h3>
-              <p class="text-gray-700">
+              <p class="text-gray-600">
                 বাসা ভাড়া নেওয়া নিশ্চিত করার জন্য অবশ্যই এক মাসের ভাড়া অগ্রিম
                 হিসেবে প্রদান করতে হবে।
               </p>
             </div>
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
+              class="bg-white p-8 rounded-xl shadow-md card-hover reveal border border-gray-100"
             >
-              <div class="text-4xl mb-4">🔒</div>
+              <div class="text-4xl mb-4 text-teal-500">
+                <i class="fa-solid fa-lock"></i>
+              </div>
               <h3 class="text-xl font-bold mb-2">নিরাপত্তা ও গেট</h3>
-              <p class="text-gray-700">
+              <p class="text-gray-600">
                 বাসায় প্রবেশ এবং বাহির হওয়ার পর সর্বদা ভবনের প্রধান গেটটি
                 সঠিকভাবে লক করা বাধ্যতামূলক।
               </p>
             </div>
             <div
-              class="bg-slate-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-teal-500 reveal"
+              class="bg-white p-8 rounded-xl shadow-md card-hover reveal border border-gray-100"
             >
-              <div class="text-4xl mb-4">💳</div>
+              <div class="text-4xl mb-4 text-teal-500">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
               <h3 class="text-xl font-bold mb-2">ভাড়া পরিশোধের সময়সীমা</h3>
-              <p class="text-gray-700">
+              <p class="text-gray-600">
                 প্রতি মাসের ১০ তারিখের মধ্যে কোনোপ্রকার বিলম্ব ছাড়াই সম্পূর্ণ
                 বাসা ভাড়া পরিশোধ করতে হবে।
               </p>
@@ -163,18 +195,18 @@
         </div>
       </section>
 
-      <section id="contact" class="py-16 bg-slate-100">
+      <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 text-center reveal">
-          <h2 class="text-3xl font-bold text-gray-800">
-            জরুরী প্রয়োজনে যোগাযোগ
+          <h2 class="text-4xl font-bold text-gray-800">
+            জরুরী প্রয়োজনে <span class="gradient-text">যোগাযোগ</span>
           </h2>
-          <div class="mt-6 bg-white max-w-md mx-auto p-8 rounded-lg shadow-md">
+          <div class="mt-8 bg-white max-w-md mx-auto p-8 rounded-xl shadow-lg">
             <p class="text-lg">ম্যানেজার/মালিকের নাম:</p>
-            <h3 class="text-2xl font-bold text-teal-600 my-2">মনজুরুল হক</h3>
+            <h3 class="text-3xl font-bold text-teal-600 my-2">মনজুরুল হক</h3>
             <p class="text-lg mt-4">মোবাইল নম্বর:</p>
             <a
               href="tel:01715423646"
-              class="text-2xl font-bold text-teal-600 my-2"
+              class="text-3xl font-bold text-teal-600 my-2 tracking-wider"
               >01715423646</a
             >
           </div>
