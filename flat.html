@@ -18,21 +18,36 @@
     <style>
       body {
         font-family: "Hind Siliguri", sans-serif;
-        background-color: #f0f4f8;
+        background-color: #fff1f2; /* Light Pink (pink-50) */
       }
       .reveal {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px) scale(0.95);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
       .reveal.active {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
       .gradient-text {
-        background: linear-gradient(to right, #0d9488, #0d8a94);
+        background: linear-gradient(
+          to right,
+          #c026d3 0%,
+          #db2777 50%,
+          #c026d3 100%
+        ); /* fuchsia-700, pink-600 */
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        animation: shimmer 4s linear infinite;
+      }
+      @keyframes shimmer {
+        from {
+          background-position: 200% center;
+        }
+        to {
+          background-position: 0% center;
+        }
       }
     </style>
   </head>
@@ -46,125 +61,83 @@
           <div class="hidden md:flex items-center space-x-6">
             <a
               href="index.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >প্রথম পাতা</a
             >
             <a
               href="form.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >তথ্য ফরম</a
             >
-            <a href="flat.html" class="text-teal-600 font-bold">খালি ফ্ল্যাট</a>
+            <a href="flat.html" class="text-pink-600 font-bold">খালি ফ্ল্যাট</a>
             <a
               href="complain.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >অভিযোগ</a
             >
             <a
               href="index.html#contact"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >যোগাযোগ</a
             >
           </div>
-          <button id="menu-btn" class="md:hidden text-2xl text-teal-600">
+          <button id="menu-btn" class="md:hidden text-2xl text-pink-600">
             ☰
           </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
           <a
             href="index.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >প্রথম পাতা</a
           >
           <a
             href="form.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >তথ্য ফরম</a
           >
           <a
             href="flat.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >খালি ফ্ল্যাট</a
           >
           <a
             href="complain.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >অভিযোগ</a
           >
           <a
             href="index.html#contact"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >যোগাযোগ</a
           >
         </div>
       </nav>
     </header>
 
-    <main class="py-20">
+    <main class="py-20 min-h-[calc(100vh-200px)] flex items-center">
       <section id="vacant-flats" class="container mx-auto px-6 reveal">
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-gray-800">
             <span class="gradient-text">খালি ফ্ল্যাটের</span> তথ্য
           </h2>
           <p class="text-gray-600 mt-3">
-            বর্তমানে নিম্নলিখিত ফ্ল্যাটগুলো ভাড়া দেওয়ার জন্য প্রস্তুত রয়েছে।
+            বর্তমানে কোনো ফ্ল্যাট খালি নেই। নতুন ফ্ল্যাট খালি হলে এখানে তথ্য
+            আপডেট করা হবে।
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 reveal"
-          >
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-2xl font-bold text-teal-600">ফ্ল্যাট নং: A-3</h3>
-              <span
-                class="bg-teal-100 text-teal-700 text-sm font-semibold px-3 py-1 rounded-full"
-                >ভাড়ার জন্য প্রস্তুত</span
-              >
-            </div>
-            <div class="space-y-3 text-lg text-gray-600">
-              <p>
-                <strong
-                  ><i class="fa-solid fa-ruler-combined mr-2 text-teal-500"></i
-                  >সাইজ:</strong
-                >
-                ১২৫০ স্কয়ার ফিট
-              </p>
-              <p>
-                <strong
-                  ><i class="fa-solid fa-bed mr-2 text-teal-500"></i
-                  >বেডরুম:</strong
-                >
-                ২টি,
-                <strong
-                  ><i class="fa-solid fa-bath ml-4 mr-2 text-teal-500"></i
-                  >বাথরুম:</strong
-                >
-                ২টি
-              </p>
-              <p>
-                <strong
-                  ><i class="fa-solid fa-money-bill-wave mr-2 text-teal-500"></i
-                  >ভাড়া:</strong
-                >
-                ১০,০০০ টাকা
-              </p>
-            </div>
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 reveal max-w-lg mx-auto text-center"
+        >
+          <div class="text-5xl mb-5 text-pink-400">
+            <i class="fa-solid fa-building-circle-xmark"></i>
           </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 reveal"
-          >
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-2xl font-bold text-gray-500">ফ্ল্যাট নং: C-1</h3>
-              <span
-                class="bg-red-100 text-red-700 text-sm font-semibold px-3 py-1 rounded-full"
-                >ভাড়া হয়ে গেছে</span
-              >
-            </div>
-            <p class="text-gray-500 text-lg mt-4">
-              এই ফ্ল্যাটটি সম্প্রতি ভাড়া হয়ে গেছে। নতুন কোনো ফ্ল্যাট খালি হলে
-              এখানে আপডেট করা হবে।
-            </p>
-          </div>
+          <h3 class="text-3xl font-bold text-gray-700">দুঃখিত!</h3>
+          <p class="text-gray-600 text-lg mt-3">
+            বর্তমানে আমাদের কোনো ফ্ল্যাট খালি নেই।
+            <br />
+            নতুন কোনো ফ্ল্যাট খালি হলে আমরা দ্রুত এখানে জানিয়ে দেবো।
+          </p>
         </div>
       </section>
     </main>

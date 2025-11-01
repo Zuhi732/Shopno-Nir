@@ -18,21 +18,36 @@
     <style>
       body {
         font-family: "Hind Siliguri", sans-serif;
-        background-color: #f0f4f8;
+        background-color: #fff1f2; /* Light Pink (pink-50) */
       }
       .reveal {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px) scale(0.95);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
       .reveal.active {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
       .gradient-text {
-        background: linear-gradient(to right, #0d9488, #0d8a94);
+        background: linear-gradient(
+          to right,
+          #c026d3 0%,
+          #db2777 50%,
+          #c026d3 100%
+        ); /* fuchsia-700, pink-600 */
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        animation: shimmer 4s linear infinite;
+      }
+      @keyframes shimmer {
+        from {
+          background-position: 200% center;
+        }
+        to {
+          background-position: 0% center;
+        }
       }
     </style>
   </head>
@@ -46,54 +61,54 @@
           <div class="hidden md:flex items-center space-x-6">
             <a
               href="index.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >প্রথম পাতা</a
             >
-            <a href="form.html" class="text-teal-600 font-bold">তথ্য ফরম</a>
+            <a href="form.html" class="text-pink-600 font-bold">তথ্য ফরম</a>
             <a
               href="flat.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >খালি ফ্ল্যাট</a
             >
             <a
               href="complain.html"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >অভিযোগ</a
             >
             <a
               href="index.html#contact"
-              class="text-gray-600 hover:text-teal-600 transition"
+              class="text-gray-600 hover:text-pink-600 transition"
               >যোগাযোগ</a
             >
           </div>
-          <button id="menu-btn" class="md:hidden text-2xl text-teal-600">
+          <button id="menu-btn" class="md:hidden text-2xl text-pink-600">
             ☰
           </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
           <a
             href="index.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >প্রথম পাতা</a
           >
           <a
             href="form.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >তথ্য ফরম</a
           >
           <a
             href="flat.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >খালি ফ্ল্যাট</a
           >
           <a
             href="complain.html"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >অভিযোগ</a
           >
           <a
             href="index.html#contact"
-            class="block py-2 text-gray-700 hover:bg-teal-50 rounded"
+            class="block py-2 text-gray-700 hover:bg-pink-50 rounded"
             >যোগাযোগ</a
           >
         </div>
