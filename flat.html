@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>খালি ফ্ল্যাট | স্বপ্ননীড় আবাসন</title>
+    <title>খালি ফ্ল্যাট | স্বপ্ননীড় আবাসন</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
     <style>
       body {
         font-family: "Hind Siliguri", sans-serif;
-        background-color: #fff1f2; /* Light Pink (pink-50) */
+        background-color: #fff1f2; /* Light Pink */
       }
       .reveal {
         opacity: 0;
@@ -35,7 +35,7 @@
           #c026d3 0%,
           #db2777 50%,
           #c026d3 100%
-        ); /* fuchsia-700, pink-600 */
+        );
         background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -51,12 +51,12 @@
       }
     </style>
   </head>
-  <body class="text-gray-700">
+  <body class="text-gray-700 flex flex-col min-h-screen">
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <a href="index.html" class="text-2xl font-bold gradient-text"
-            >স্বপ্ননীড় আবাসন</a
+            >স্বপ্ননীড় আবাসন</a
           >
           <div class="hidden md:flex items-center space-x-6">
             <a
@@ -82,7 +82,7 @@
             >
           </div>
           <button id="menu-btn" class="md:hidden text-2xl text-pink-600">
-            ☰
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4">
@@ -115,46 +115,94 @@
       </nav>
     </header>
 
-    <main class="py-20 min-h-[calc(100vh-200px)] flex items-center">
-      <section id="vacant-flats" class="container mx-auto px-6 reveal">
-        <div class="text-center mb-12">
+    <main class="flex-grow flex items-center justify-center py-20">
+      <section id="vacant-flats" class="container mx-auto px-6 reveal w-full">
+        <div class="text-center mb-10">
           <h2 class="text-4xl font-bold text-gray-800">
             <span class="gradient-text">খালি ফ্ল্যাটের</span> তথ্য
           </h2>
-          <p class="text-gray-600 mt-3">
-            বর্তমানে কোনো ফ্ল্যাট খালি নেই। নতুন ফ্ল্যাট খালি হলে এখানে তথ্য
-            আপডেট করা হবে।
-          </p>
+          <p class="text-gray-600 mt-3">ফ্ল্যাটের বর্তমান অবস্থা নিচে দেখুন</p>
         </div>
+
         <div
-          class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 reveal max-w-lg mx-auto text-center"
-        >
-          <div class="text-5xl mb-5 text-pink-400">
-            <i class="fa-solid fa-building-circle-xmark"></i>
-          </div>
-          <h3 class="text-3xl font-bold text-gray-700">দুঃখিত!</h3>
-          <p class="text-gray-600 text-lg mt-3">
-            বর্তমানে আমাদের কোনো ফ্ল্যাট খালি নেই।
-            <br />
-            নতুন কোনো ফ্ল্যাট খালি হলে আমরা দ্রুত এখানে জানিয়ে দেবো।
-          </p>
-        </div>
+          id="status-display"
+          class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 reveal max-w-lg mx-auto text-center transition-all duration-300"
+        ></div>
       </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
       <div class="container mx-auto px-6 text-center">
-        <p>&copy; ২০২৫ স্বপ্ননীড় আবাসন। সর্বসত্ত্ব সংরক্ষিত।</p>
+        <p>&copy; ২০২৫ স্বপ্ননীড় আবাসন। সর্বসত্ত্ব সংরক্ষিত।</p>
       </div>
     </footer>
 
     <script>
+      // ============================================
+      //  CONTROL PANEL (আপনি এখান থেকে নিয়ন্ত্রণ করবেন)
+      // ============================================
+
+      // নিচে true লিখলে দেখাবে "খালি আছে"
+      // নিচে false লিখলে দেখাবে "বর্তমানে খালি নেই"
+
+      const isFlatAvailable = true; // পরিবর্তন করুন: true অথবা false
+
+      // ============================================
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const statusDisplay = document.getElementById("status-display");
+
+        if (isFlatAvailable) {
+          // যদি ফ্ল্যাট খালি থাকে (Available State)
+          statusDisplay.innerHTML = `
+            <div class="text-6xl mb-6 text-green-500 animate-bounce">
+                <i class="fa-solid fa-house-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">ফ্ল্যাট খালি আছে!</h3>
+            <div class="bg-pink-50 rounded-lg p-6 mt-4 border border-pink-100">
+                <ul class="text-left space-y-3 text-lg text-gray-700">
+                    <li class="flex items-center"><i class="fa-solid fa-bed text-pink-600 w-8"></i> ১টি রুম (বেডরুম)</li>
+                    <li class="flex items-center"><i class="fa-solid fa-bath text-pink-600 w-8"></i> ১টি বাথরুম</li>
+                    <li class="flex items-center"><i class="fa-solid fa-kitchen-set text-pink-600 w-8"></i> ১টি কিচেন</li>
+                </ul>
+            </div>
+            <p class="text-gray-500 mt-6 text-sm">আগ্রহী হলে নিচের বাটনে ক্লিক করে যোগাযোগ করুন।</p>
+            <a href="index.html#contact" class="inline-block mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition transform hover:scale-105 shadow-md">
+                যোগাযোগ করুন
+            </a>
+          `;
+        } else {
+          // যদি ভাড়া হয়ে যায় (Rented State)
+          statusDisplay.innerHTML = `
+            <div class="text-6xl mb-6 text-gray-400">
+                <i class="fa-solid fa-house-circle-xmark"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-600">বর্তমানে কোনো ফ্ল্যাট খালি নেই</h3>
+            <p class="text-gray-500 text-lg mt-4">
+               দুঃখিত! আমাদের একমাত্র খালি ফ্ল্যাটটি ভাড়া হয়ে গেছে।
+               পরবর্তীতে খালি হলে এখানে জানিয়ে দেওয়া হবে।
+            </p>
+            <button disabled class="mt-8 bg-gray-200 text-gray-400 px-8 py-3 rounded-full font-semibold cursor-not-allowed">
+                বুকিং বন্ধ আছে
+            </button>
+          `;
+        }
+      });
+
+      // Mobile Menu Logic
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
-      menuBtn.addEventListener("click", () =>
-        mobileMenu.classList.toggle("hidden")
-      );
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        // Toggle Icon
+        if (mobileMenu.classList.contains("hidden")) {
+          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        } else {
+          menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
+      });
 
+      // Scroll Reveal Logic
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -167,5 +215,8 @@
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
     </script>
+    <!-- কোডটি রান করলে এখন দেখবেন "ফ্ল্যাট খালি আছে" এবং রুম, বাথরুম, কিচেনের বিবরণ দেখাচ্ছে। ২. যখন ভাড়া হয়ে যাবে, তখন কোডের একদম নিচে <script> অংশের শুরুতে যাবেন। ৩. সেখানে লেখা আছে: const isFlatAvailable = true; ৪. এটাকে পরিবর্তন করে লিখবেন: const isFlatAvailable = false;
+
+    বাস! সাথে সাথে ওয়েবসাইট দেখাবে "বর্তমানে কোনো ফ্ল্যাট খালি নেই"। -->
   </body>
 </html>
